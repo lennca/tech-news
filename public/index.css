@@ -1,0 +1,15 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+* {
+  font-family: 'montserrat, Courier New, Courier, monospace';
+}
+
+nav {
+  background-color: rgb(217, 217, 255);
+}
