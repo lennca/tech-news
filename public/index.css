@@ -1,3 +1,7 @@
+* {
+  font-family: 'montserrat, Courier New, Courier, monospace';
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -6,31 +10,60 @@ body {
   background-color: whitesmoke;
 }
 
-* {
-  font-family: 'montserrat, Courier New, Courier, monospace';
-}
-
+/* Navbar */
 nav {
   background-color: rgb(217, 217, 255);
 }
 
-.card {
-  width: 100%;
-  margin-bottom: 5%;
-  box-shadow: 0px 0px 16px 4px rgba(190,190,190,0.8);
+nav > .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-/* Medium (Bootstrap) 768px */
+/* Header */
+#header-text {
+  margin-bottom: 1.5rem;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  margin-bottom: 2%;
+  box-shadow: 0px 0px 16px 4px rgba(190,190,190,0.8);
+  border-radius: 0;
+}
+
+.card > a {
+  width: max-content;
+}
+
+.card > .image {
+  min-height: 220px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.card > .card-body {
+  padding: 2rem 2rem;
+}
+
+.card-text {
+  font-size: 1.5rem;
+}
+
+/* Media queries */
 @media only screen and (min-width: 768px) {
   .card {
-    width: 30%;
+    width: 32%;
   }
 
   #card-container > .card:nth-child(3n + 1) {  
-    margin-right: 5%;
+    margin-right: 2%;
   }
   
   #card-container > .card:nth-child(3n + 2) {  
-    margin-right: 5%;
+    margin-right: 2%;
   }
 }
