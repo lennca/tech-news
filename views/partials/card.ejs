@@ -1,13 +1,16 @@
 <div class="card" style="border-radius: 0;">
   <img 
-  src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MOTCRMGK44I6XBYIMSMR6KWPFA.jpg&w=1440" 
+  src="<%= article.urlToImage %>" 
   class="card-img-top" 
   alt="..."
   style="border-radius: 0;"
   >
-  <div class="card-body" style="padding: 2rem 2rem;">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text" style="font-size: 1.5rem;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="card-body d-flex flex-column" style="padding: 2rem 2rem;">
+    <h5 class="card-title"><%= article.publishedAt.substring(0, 10) %></h5>
+    <p class="card-text flex-grow-1" style="font-size: 1.5rem;">
+      <%- article.title %>
+    </p>
+    <a target="_blank" style="width: max-content;" href="<%= article.url %>" class="btn btn-primary">Full article</a>
   </div>
+  <% console.log(article) %>
 </div>

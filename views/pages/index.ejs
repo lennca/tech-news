@@ -24,11 +24,11 @@
 
     <!-- Content -->
     <div class="container d-flex flex-column px-3">
-      <h1>Hello, world!</h1>
+      <h1 style="margin-bottom: 1.5rem;">Hello, world!</h1>
       <div class="d-flex flex-row flex-wrap" id="card-container">
-        <% for( let index = 0; index < 5; index++ ) { %>
-          <%- include('../partials/card.ejs') %>
-        <% } %>
+        <% articles.forEach(article => { %>
+          <%- include('../partials/card.ejs', {article}) %>
+        <% }) %>
         </div>
       </div>
     </div>
