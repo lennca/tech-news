@@ -7,12 +7,14 @@
 
     <!-- Content -->
     <div class="container d-flex flex-column px-3">
-      <h1 id="header-text">Hello, world!</h1>
-      <div class="d-flex flex-row flex-wrap" id="card-container">
+      <!-- Header -->
+      <h1 id="header-text" class="mb-3">Viewing top 50 technology news!</h1>
+
+      <!-- Articles -->
+      <div class="d-flex flex-row flex-wrap mb-3" id="card-container">
         <% articles.forEach(article => { %>
           <%- include('../partials/card.ejs', {article}) %>
         <% }) %>
-        </div>
       </div>
     </div>
 

@@ -35,14 +35,13 @@ const fetchNews = async (url) => {
 
 app.get('/', async (req, res) => {
   const main = 'top-headlines'
-  const url = `https://newsapi.org/v2/${main}?category=technology&language=en`
+  const url = `https://newsapi.org/v2/${main}?category=technology&language=en&pageSize=50`
   const result = await fetchNews(url)
   const { status, statusText, data } = result
-  const articles = data.articles.slice(0, 10)
+  const { articles } = data
+
   // Error handling (check response status-code)
-  return res.render('pages/index.ejs', {
-    articles,
-  })
+  return res.render('pages/index.ejs', { articles })
 })
 
 app.get('/search', async (req, res) => {
@@ -50,14 +49,12 @@ app.get('/search', async (req, res) => {
   if (!query || query.length < 1) return res.redirect('/')
 
   const main = 'top-headlines'
-  const url = `https://newsapi.org/v2/${main}?category=technology&language=en&q=${query}`
+  const url = `https://newsapi.org/v2/${main}?category=technology&language=en&pageSize=50&q=${query}`
   const result = await fetchNews(url)
   const { status, statusText, data } = result
-  const articles = data.articles.slice(0, 10)
+  const { articles } = data
   // Error handling (check response status-code)
-  return res.render('pages/index.ejs', {
-    articles,
-  })
+  return res.render('pages/index.ejs', { articles })
 })
 
 app.listen(PORT, () => {
