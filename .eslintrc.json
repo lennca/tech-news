@@ -12,6 +12,8 @@
     "rules": {
       "semi":"off",
       "no-underscore-dangle":"off",
-      "no-unused-vars":"warn"
+      "no-unused-vars":"warn",
+      "class-methods-use-this":"off",
+      "import/extensions": "off"
     }
 }
