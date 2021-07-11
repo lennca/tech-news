@@ -9,7 +9,10 @@ class IndexController {
     const { articles } = data
 
     // Error handling (check response status-code)
-    return res.render('pages/index.ejs', { articles })
+
+    const header = `Viewing top ${articles.length} technology news!`
+
+    return res.render('pages/index.ejs', { articles, header })
   }
 }
 

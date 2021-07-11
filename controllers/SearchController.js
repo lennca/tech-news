@@ -11,7 +11,10 @@ class SearchController {
     const { status, statusText, data } = result
     const { articles } = data
     // Error handling (check response status-code)
-    return res.render('pages/index.ejs', { articles })
+
+    const header = `Found ${articles.length} results based on search!`
+
+    return res.render('pages/index.ejs', { articles, header })
   }
 }
 

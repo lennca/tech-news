@@ -12,7 +12,8 @@ body {
 
 /* Navbar */
 nav {
-  background-color: rgb(217, 217, 255);
+  background-color: white;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.4);
 }
 
 nav > .container {
@@ -20,9 +21,17 @@ nav > .container {
   padding-right: 1rem;
 }
 
+nav .navbar-brand {
+  font-size: 2rem;
+  font-style: italic;
+}
+
 /* Header */
 #header-text {
   margin-bottom: 1.5rem;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 4px;
+  max-width: max-content;
 }
 
 /* Card */
@@ -34,7 +43,6 @@ nav > .container {
   transition: all .2s ease-in-out;
   cursor: pointer;
 }
-
 
 .card:hover {
   transform: scale(1.05);
