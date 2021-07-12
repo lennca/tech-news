@@ -2,17 +2,19 @@ import FetchNews from '../helpers/FetchNews.js'
 
 class IndexController {
   async index(req, res) {
-    const main = 'top-headlines'
-    const url = `https://newsapi.org/v2/${main}?category=technology&language=en&pageSize=50`
-    const result = await FetchNews(url)
-    const { status, statusText, data } = result
-    const { articles } = data
+    try {
+      const main = 'top-headlines'
+      const url = `https://newsapi.org/v2/${main}?category=technology&language=en&pageSize=50`
+      const { status, data } = await FetchNews(url)
 
-    // Error handling (check response status-code)
+      if (status < 200 || status > 299) throw new Error('Fetch response status is not in valid range')
 
-    const header = `Viewing top ${articles.length} technology news!`
-
-    return res.render('pages/index.ejs', { articles, header })
+      const { articles } = data
+      const header = `Viewing top ${articles.length} technology news!`
+      return res.render('pages/index.ejs', { articles, header })
+    } catch (error) {
+      return res.render('pages/index.ejs', { articles: [], header: 'An unexpected error occurred. Please try again later!' })
+    }
   }
 }
 

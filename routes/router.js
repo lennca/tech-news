@@ -8,8 +8,8 @@ const Router = express.Router()
 Router.use('/', IndexRouter)
 Router.use('/search', SearchRouter)
 
-Router.use('*', (req, res, next) => {
-  console.log('error')
+Router.use('*', (req, res) => {
+  res.redirect('/') // send error
 })
 
 export default Router

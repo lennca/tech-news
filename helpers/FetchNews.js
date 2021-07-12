@@ -11,8 +11,8 @@ const FetchNews = async (url) => {
     })
     return response
   } catch (error) {
-    console.log(error)
-    return { status: 500, statusText: 'fail', data: [] }
+    const { status, data } = error.response
+    return { status, data }
   }
 }
 
