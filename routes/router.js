@@ -8,8 +8,9 @@ const Router = express.Router()
 Router.use('/', IndexRouter)
 Router.use('/search', SearchRouter)
 
+// Redirect each request to a non-existing url to home
 Router.use('*', (req, res) => {
-  res.redirect('/') // send error
+  res.redirect('/')
 })
 
 export default Router

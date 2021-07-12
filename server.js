@@ -11,6 +11,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const app = express()
 
+// Set view-engine and view-directory
 app.set('views', join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 
