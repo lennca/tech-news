@@ -7,6 +7,11 @@
 
     <!-- Content -->
     <div class="container d-flex flex-column px-3">
+      <!-- Error-alert -->
+      <% if (error) { %>
+        <%- include('../partials/alert.ejs', {error}) %>
+      <% } %>
+
       <!-- Header -->
       <h3 id="header-text" class="mb-3"><%=header%></h3>
 

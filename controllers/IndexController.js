@@ -11,9 +11,10 @@ class IndexController {
 
       const { articles } = data
       const header = `Viewing top ${articles.length} technology news!`
-      return res.render('pages/index.ejs', { articles, header })
+      return res.render('pages/index.ejs', { articles, header, error: null })
     } catch (error) {
-      return res.render('pages/index.ejs', { articles: [], header: 'An unexpected error occurred. Please try again later!' })
+      const header = 'Viewing 0 technology news due to error!'
+      return res.render('pages/index.ejs', { articles: [], header, error: { title: 'An unexpected error occurred.', description: 'Please try again later!' } })
     }
   }
 }

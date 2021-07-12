@@ -14,9 +14,10 @@ class SearchController {
 
       const { articles } = data
       const header = `Found ${articles.length} results based on search!`
-      return res.render('pages/index.ejs', { articles, header })
+      return res.render('pages/index.ejs', { articles, header, error: null })
     } catch (error) {
-      return res.render('pages/index.ejs', { articles: [], header: 'An unexpected error occurred. Please try again later!' })
+      const header = 'Viewing 0 technology news due to error!'
+      return res.render('pages/index.ejs', { articles: [], header, error: { title: 'An unexpected error occurred.', description: 'Please try again later!' } })
     }
   }
 }
