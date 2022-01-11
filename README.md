@@ -41,10 +41,6 @@ API_KEY=<YOUR_API_KEY>
   npm start
   ``` 
 
-### Notes
-
-Additional requirements or functionality is appreciated. Fork project or contact creator to contribute!
-
 ## Screenshots
 
 <div>
